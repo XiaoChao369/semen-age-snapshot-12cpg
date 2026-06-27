@@ -4,7 +4,7 @@
 # Estimates chronological age from semen DNA methylation data
 # using the 12-CpG SNaPshot multiplex assay models.
 # 
-# Author: Chao Xiao
+# Author: Chao Xiao @HUST
 # License: MIT
 # ============================================================
 

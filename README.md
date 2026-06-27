@@ -74,7 +74,7 @@ print(results_pi)
 
 Your input must be a `data.frame` with the following **12 columns** (exact names required):
 
-| Column Name      | Marker ID      | Direction with age | Detection |
+| Column Name      | Marker ID      | Direction with Age | Detection |
 | ---------------- | -------------- | --------- | --------- |
 | `cg19998819`     | cg19998819     | Positive  | C/(C+T)   |
 | `cg11262154`     | cg11262154     | Positive  | C/(C+T)   |

@@ -3,7 +3,7 @@
 # run_example.R
 # Demonstrates how to use the estimate_semen_age() function
 # 
-# Author: Chao Xiao
+# Author: Chao Xiao @HUST
 # License: MIT
 # ============================================================
 

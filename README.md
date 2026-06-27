@@ -74,7 +74,7 @@ print(results_pi)
 
 Your input must be a `data.frame` with the following **12 columns** (exact names required):
 
-| Column Name      | Marker ID      | Direction | Detection |
+| Column Name      | Marker ID      | Direction with age | Detection |
 | ---------------- | -------------- | --------- | --------- |
 | `cg19998819`     | cg19998819     | Positive  | C/(C+T)   |
 | `cg11262154`     | cg11262154     | Positive  | C/(C+T)   |
@@ -84,9 +84,9 @@ Your input must be a `data.frame` with the following **12 columns** (exact names
 | `cg25187042`     | cg25187042     | Positive  | C/(C+T)   |
 | `cg20602007`     | cg20602007     | Positive  | C/(C+T)   |
 | `cg21843517`     | cg21843517     | Positive  | C/(C+T)   |
-| `cg13872326`     | cg13872326     | Negative  | C/(C+T)   |
+| `cg13872326`     | cg13872326     | Positive  | C/(C+T)   |
 | `chr1.19339447`  | chr1:19339447  | Negative  | G/(G+A)   |
-| `chr13.93039685` | chr13:93039685 | Positive  | C/(C+T)   |
+| `chr13.93039685` | chr13:93039685 | Negative  | C/(C+T)   |
 | `chr19.18610678` | chr19:18610678 | Negative  | C/(C+T)   |
 
 - All values must be **methylation ratios** between 0 and 1
@@ -101,7 +101,7 @@ Your input must be a `data.frame` with the following **12 columns** (exact names
 - **Package:** `e1071::svm(type = "eps-regression")`
 - **Hyperparameters:** cost = 128, gamma = 0.005, epsilon = 1.0
 - **Internal scaling:** The `svm()` function applies automatic feature scaling (`scale = TRUE` by default); scaling parameters are stored within the model object
-- **Performance:** CV-MAE = 2.86 ± 0.44 years, CV-RMSE = 3.75 ± 0.57, CV-R2 = 0.850 ± 0.057
+- **Performance:** CV-MAE = 2.86 ± 0.44 years, CV-RMSE = 3.75 ± 0.57, CV-R² = 0.850 ± 0.057
 
 ### MLR (Interpretable reference)
 
@@ -118,7 +118,7 @@ Your input must be a `data.frame` with the following **12 columns** (exact names
         − 13.93×chr1:19339447 + 4.67×chr13:93039685 + 33.87×chr19:18610678
   ```
 
-- **Performance:** CV-MAE = 3.24 ± 0.47 years, CV-RMSE = 4.11 ± 0.55, CV-R2 = 0.822 ± 0.057
+- **Performance:** CV-MAE = 3.24 ± 0.47 years, CV-RMSE = 4.11 ± 0.55, CV-R² = 0.822 ± 0.057
 
 ### MQR (Robust + uncertainty quantification)
 
@@ -126,7 +126,7 @@ Your input must be a `data.frame` with the following **12 columns** (exact names
 - **Package:** `quantreg::rq()`
 - **Point estimate:** Median regression (τ = 0.50)
 - **80% prediction interval:** [τ = 0.10, τ = 0.90]
-- **Performance:** CV-MAE = 3.22 ± 0.47 years (median), CV-RMSE = 4.11 ± 0.57 (median), CV-R2 = 0.823 ± 0.053 (median)
+- **Performance:** CV-MAE = 3.22 ± 0.47 years (median), CV-RMSE = 4.11 ± 0.57 (median), CV-R² = 0.823 ± 0.053 (median)
 - **Note:** Empirical PI under-coverage reflects estimation variance in moderately-sized training data; interpret intervals as approximate guidance
 
 ## Important Limitations
